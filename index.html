@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Belor · Moda masculina no Centro de BH</title>
+<meta name="description" content="Chame no WhatsApp, entre no Grupo VIP ou compre no site. Loja física na Av. Santos Dumont, 315, Centro de BH. Enviamos para todo o Brasil.">
+<meta name="theme-color" content="#0b0b0b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Belor · Moda masculina no Centro de BH">
+<meta property="og:description" content="WhatsApp, Grupo VIP e site da Belor. Loja física no Centro de BH e envio para todo o Brasil.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-8 -12 80 64'%3E%3Crect x='-8' y='-12' width='80' height='64' rx='14' fill='%230b0b0b'/%3E%3Cpath fill='%23d4ad55' d='M6 33L2 10l16 12L32 4l14 18 16-12-4 23z'/%3E%3Crect x='6' y='35' width='52' height='4' fill='%23d4ad55'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap">
+<style>
+:root{
+  --ink:#0b0b0b; --paper:#ffffff; --soft:#f4f4f4; --line:#e6e6e6; --muted:#666666;
+  --gold:#c9a24a; --gold-hi:#f1d98f; --gold-dk:#a8832f; --green:#1e9e50;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);-webkit-text-size-adjust:100%}
+body{font-family:"Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--ink);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent}
+ul{list-style:none}
+.page{max-width:480px;margin:0 auto;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;background:var(--paper)}
+.i{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* Faixa da Black Friday */
+.bf{display:block;padding:10px 16px 11px;padding-top:calc(10px + env(safe-area-inset-top));background:linear-gradient(100deg,#a8822f 0%,#d8b660 32%,#f4df9c 50%,#d8b660 68%,#a8822f 100%);color:var(--ink)}
+.bf-top{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.bf-row{display:flex;align-items:center;gap:8px;margin-top:6px}
+.bf-label{font-size:13px;font-weight:600;white-space:nowrap}
+.bf-clock{display:none;background:var(--ink);color:var(--gold-hi);border-radius:7px;padding:4px 8px;font-size:13px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+.bf.js .bf-clock{display:inline-block}
+.bf-cta{margin-left:auto;display:inline-flex;align-items:center;gap:1px;font-size:13px;font-weight:800;white-space:nowrap}
+.bf-cta .i{width:16px;height:16px;stroke-width:2.8}
+.bf.live .bf-when{display:inline-flex;align-items:center;gap:6px}
+.bf.live .bf-when::before{content:"";width:7px;height:7px;border-radius:50%;background:#c4161c;animation:pulse-red 1.4s infinite}
+
+/* Topo */
+.hero{position:relative;overflow:hidden;background:var(--ink);color:#fff;text-align:center;padding:30px 20px 50px}
+.hero::before{content:"";position:absolute;left:50%;top:-30%;width:150%;height:110%;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(201,162,74,.30),rgba(201,162,74,0) 72%);pointer-events:none}
+.brand{position:relative;display:inline-flex;flex-direction:column;align-items:center;gap:6px}
+.crown{width:52px;height:31px}
+.wordmark{font-size:40px;line-height:1;font-weight:800;letter-spacing:.18em;padding-left:.18em;background:linear-gradient(180deg,#f7e6ad 0%,#d4ad55 55%,#9c772b 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1{position:relative;margin-top:20px;font-size:27px;line-height:1.12;font-weight:800;letter-spacing:-.015em}
+.hero h1 em{font-style:normal;color:var(--gold-hi)}
+.sub{position:relative;margin-top:10px;font-size:13.5px;line-height:1.55;font-weight:500;color:rgba(255,255,255,.74)}
+.status{position:relative;display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);font-size:12.5px;font-weight:600}
+.status[hidden]{display:none}
+.status .dot{width:8px;height:8px;border-radius:50%;background:#9a9a9a}
+.status.open .dot{background:#34d36e;animation:pulse 1.8s infinite}
+
+/* Botões */
+.sheet{position:relative;flex:1;margin-top:-24px;padding:20px 16px 6px;border-radius:22px 22px 0 0;background:var(--paper);display:flex;flex-direction:column;gap:12px}
+.btn{display:flex;align-items:center;gap:14px;padding:16px 14px 16px 16px;border-radius:16px;transition:transform .12s ease}
+.btn:active{transform:scale(.985)}
+.ic{width:44px;height:44px;flex:none;display:grid;place-items:center;border-radius:12px}
+.txt{flex:1;min-width:0;display:flex;flex-direction:column}
+.t{font-size:16px;line-height:1.2;font-weight:800}
+.s{margin-top:3px;font-size:12.5px;line-height:1.35;font-weight:500}
+.chev{width:20px;height:20px;opacity:.7}
+
+.wa{position:relative;overflow:hidden;padding:20px 14px 20px 16px;background:var(--green);color:#fff;box-shadow:0 14px 28px -14px rgba(30,158,80,.8)}
+.wa::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.30) 50%,transparent 65%);transform:translateX(-130%);animation:shine 4s ease-in-out 1s infinite;pointer-events:none}
+.wa .ic{background:rgba(255,255,255,.18)}
+.wa .t{font-size:18px}
+.wa .s{color:rgba(255,255,255,.9)}
+
+.vip{flex-direction:column;align-items:stretch;gap:0;background:var(--ink);color:#fff;border:1px solid rgba(201,162,74,.6)}
+.vip-head{display:flex;align-items:center;gap:14px}
+.vip .ic{background:linear-gradient(160deg,#f4df9c,#c9a24a 60%,#9a7629);color:var(--ink)}
+.vip .s{color:var(--gold-hi)}
+.vip-list{display:grid;grid-template-columns:1fr 1fr;gap:9px 12px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12)}
+.vip-list li{display:flex;align-items:flex-start;gap:6px;font-size:12.5px;line-height:1.3;font-weight:600;color:rgba(255,255,255,.92)}
+.vip-list .i{width:15px;height:15px;margin-top:1px;stroke:var(--gold);stroke-width:3}
+
+.site{border:1.5px solid var(--ink)}
+.site .ic{background:var(--ink);color:#fff}
+.site .s,.map .s{color:var(--muted)}
+.map{background:var(--soft)}
+.map .ic{background:#fff;border:1px solid var(--line)}
+
+.perks{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px;padding:16px 0 8px;border-top:1px solid var(--line)}
+.perks li{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;font-size:11.5px;line-height:1.3;font-weight:600}
+.perks .i{stroke:var(--gold-dk)}
+
+/* Rodapé */
+.foot{padding:18px 20px calc(22px + env(safe-area-inset-bottom));background:var(--soft);text-align:center;font-size:12px;line-height:1.6;color:var(--muted)}
+.hours{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--ink)}
+.hours .i,.social .i{width:15px;height:15px}
+.social{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 18px;margin:8px 0 10px}
+.social a{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--ink)}
+.legal{font-size:11px}
+
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,211,110,.55)}70%{box-shadow:0 0 0 8px rgba(52,211,110,0)}100%{box-shadow:0 0 0 0 rgba(52,211,110,0)}}
+@keyframes pulse-red{0%{box-shadow:0 0 0 0 rgba(196,22,28,.5)}70%{box-shadow:0 0 0 7px rgba(196,22,28,0)}100%{box-shadow:0 0 0 0 rgba(196,22,28,0)}}
+@keyframes shine{0%{transform:translateX(-130%)}40%,100%{transform:translateX(130%)}}
+@media (max-width:350px){.bf-cta-txt{display:none}.hero h1{font-size:24px}.wordmark{font-size:34px}}
+@media (prefers-reduced-motion:reduce){.wa::after,.status.open .dot,.bf.live .bf-when::before{animation:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></symbol>
+  <symbol id="i-crown" viewBox="0 0 24 24"><path d="M3 8.5l4.5 4 4.5-7 4.5 7 4.5-4-1.8 9.5H4.8z"/><path d="M5 21h14"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></symbol>
+  <symbol id="i-note" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+</svg>
+
+<div class="page">
+
+  <!-- Black Friday: some sozinha depois de 14/11 -->
+  <a class="bf" id="bf" href="https://wa.me/5531998090981?text=Oi!%20Vim%20pela%20bio%20do%20Instagram%20e%20quero%20saber%20da%20Black%20Friday%20%F0%9F%96%A4">
+    <div class="bf-top"><span>Black Friday Belor</span><span class="bf-when" id="bfWhen">05 a 14/11</span></div>
+    <div class="bf-row">
+      <span class="bf-label" id="bfLabel">Começa quinta, 05/11</span>
+      <span class="bf-clock" id="bfClock"></span>
+      <span class="bf-cta"><span class="bf-cta-txt" id="bfCta">Quero saber</span><svg class="i"><use href="#i-chev"/></svg></span>
+    </div>
+  </a>
+
+  <header class="hero">
+    <div class="brand" role="img" aria-label="Belor">
+      <svg class="crown" viewBox="-2 0 68 40" aria-hidden="true">
+        <defs><linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7e6ad"/><stop offset=".55" stop-color="#d4ad55"/><stop offset="1" stop-color="#9c772b"/></linearGradient></defs>
+        <g fill="url(#gold)"><path d="M6 33L2 10l16 12L32 4l14 18 16-12-4 23z"/><rect x="6" y="35" width="52" height="4" rx="1.5"/><circle cx="2" cy="9" r="2.6"/><circle cx="32" cy="3.4" r="2.6"/><circle cx="62" cy="9" r="2.6"/></g>
+      </svg>
+      <span class="wordmark">BELOR</span>
+    </div>
+    <h1>Saia <em>trajado</em><br>da cabeça aos pés.</h1>
+    <p class="sub">Loja física no Centro de BH<br>Enviamos para todo o Brasil</p>
+    <p class="status" id="status" hidden><span class="dot"></span><span id="statusText"></span></p>
+  </header>
+
+  <main class="sheet">
+    <a class="btn wa" id="waMain" href="https://wa.me/5531998090981?text=Oi!%20Vim%20pela%20bio%20do%20Instagram%20e%20quero%20ver%20as%20pe%C3%A7as%20%F0%9F%91%91">
+      <span class="ic"><svg class="i"><use href="#i-chat"/></svg></span>
+      <span class="txt"><span class="t">Quero falar no WhatsApp</span><span class="s">Tire dúvidas, veja as peças e compre de onde estiver</span></span>
+      <svg class="i chev"><use href="#i-chev"/></svg>
+    </a>
+
+    <a class="btn vip" href="https://chat.whatsapp.com/CjRSjYONSVv4HhUj3Wd9U9">
+      <span class="vip-head">
+        <span class="ic"><svg class="i"><use href="#i-crown"/></svg></span>
+        <span class="txt"><span class="t">Quero entrar no Grupo VIP</span><span class="s">Entrar é grátis · +500 membros</span></span>
+        <svg class="i chev"><use href="#i-chev"/></svg>
+      </span>
+      <ul class="vip-list">
+        <li><svg class="i"><use href="#i-check"/></svg>Promoções só para o grupo</li>
+        <li><svg class="i"><use href="#i-check"/></svg>Novidades antes de todo mundo</li>
+        <li><svg class="i"><use href="#i-check"/></svg>Aviso quando a peça volta</li>
+        <li><svg class="i"><use href="#i-check"/></svg>Sorteios e brindes</li>
+      </ul>
+    </a>
+
+    <a class="btn site" href="https://beloestilobh.com.br/?utm_source=instagram&amp;utm_medium=bio&amp;utm_campaign=link_bio">
+      <span class="ic"><svg class="i"><use href="#i-bag"/></svg></span>
+      <span class="txt"><span class="t">Quero comprar no site</span><span class="s">Pix ou até 3x sem juros no cartão</span></span>
+      <svg class="i chev"><use href="#i-chev"/></svg>
+    </a>
+
+    <a class="btn map" href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Santos%20Dumont%2C%20315%20-%20Centro%2C%20Belo%20Horizonte%20-%20MG">
+      <span class="ic"><svg class="i"><use href="#i-pin"/></svg></span>
+      <span class="txt"><span class="t">Quero ir na loja</span><span class="s">Av. Santos Dumont, 315 · Centro de BH</span></span>
+      <svg class="i chev"><use href="#i-chev"/></svg>
+    </a>
+
+    <ul class="perks">
+      <li><svg class="i"><use href="#i-card"/></svg>Até 5x sem juros na loja</li>
+      <li><svg class="i"><use href="#i-swap"/></svg>Troca garantida</li>
+      <li><svg class="i"><use href="#i-truck"/></svg>Motoboy em BH e envio para o Brasil</li>
+    </ul>
+  </main>
+
+  <footer class="foot">
+    <p class="hours"><svg class="i"><use href="#i-clock"/></svg>Seg a sex 8h30–19h · Sáb 8h–17h</p>
+    <p class="social">
+      <a href="https://www.instagram.com/belor_bh/"><svg class="i"><use href="#i-camera"/></svg>@belor_bh</a>
+      <a href="https://www.tiktok.com/@belo_estilobh"><svg class="i"><use href="#i-note"/></svg>TikTok @belo_estilobh</a>
+    </p>
+    <p class="legal">Belor · Belo Estilo BH · Av. Santos Dumont, 315 – Centro, Belo Horizonte – MG</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var WA = "5531998090981"; // WhatsApp Business da loja
+  function wa(msg) { return "https://wa.me/" + WA + "?text=" + encodeURIComponent(msg); }
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+
+  var main = document.getElementById("waMain");
+  if (main) main.href = wa("Oi! Vim pela bio do Instagram e quero ver as peças 👑");
+
+  // Black Friday: 05/11 00:00 até 14/11 23:59 (horário de BH, UTC-3)
+  var START = Date.UTC(2026, 10, 5, 3, 0, 0);
+  var END = Date.UTC(2026, 10, 15, 3, 0, 0);
+  var bf = document.getElementById("bf");
+  var live = null;
+  function tick() {
+    var now = Date.now();
+    if (now >= END) { if (bf && bf.parentNode) bf.parentNode.removeChild(bf); return false; }
+    var isLive = now >= START;
+    if (isLive !== live) {
+      live = isLive;
+      bf.classList.toggle("live", live);
+      document.getElementById("bfWhen").textContent = live ? "Rolando agora" : "05 a 14/11";
+      document.getElementById("bfLabel").textContent = live ? "Acaba em" : "Começa em";
+      document.getElementById("bfCta").textContent = live ? "Ver ofertas" : "Quero saber";
+      bf.href = wa(live ? "Oi! Vim pela bio do Instagram e quero ver as ofertas da Black Friday 🖤"
+                        : "Oi! Vim pela bio do Instagram e quero saber da Black Friday 🖤");
+    }
+    var diff = Math.max(0, Math.floor(((live ? END : START) - now) / 1000));
+    var d = Math.floor(diff / 86400), h = Math.floor(diff % 86400 / 3600),
+        m = Math.floor(diff % 3600 / 60), s = diff % 60;
+    document.getElementById("bfClock").textContent = d + "d " + pad(h) + "h " + pad(m) + "m " + pad(s) + "s";
+    return true;
+  }
+  if (bf) { bf.classList.add("js"); if (tick()) setInterval(tick, 1000); }
+
+  // Aberto agora / fechado (seg a sex 8h30–19h, sáb 8h–13h, horário de BH; fechada nos feriados da lista)
+  var HOURS = { 1: [510, 1140], 2: [510, 1140], 3: [510, 1140], 4: [510, 1140], 5: [510, 1140], 6: [480, 1020] };
+  var HOLIDAYS = []; // a loja abre normal nos feriados
+  var DAYS = ["domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado"];
+  function hm(min) { var h = Math.floor(min / 60), m = min % 60; return h + "h" + (m ? pad(m) : ""); }
+  function dateKey(t) { return t.getUTCFullYear() + "-" + pad(t.getUTCMonth() + 1) + "-" + pad(t.getUTCDate()); }
+  function hoursOn(t) { return HOLIDAYS.indexOf(dateKey(t)) >= 0 ? null : HOURS[t.getUTCDay()]; }
+  function status() {
+    var t = new Date(Date.now() - 3 * 3600 * 1000);
+    var min = t.getUTCHours() * 60 + t.getUTCMinutes(), today = hoursOn(t);
+    var holiday = !today && !!HOURS[t.getUTCDay()];
+    if (today && min >= today[0] && min < today[1]) return { open: true, text: "Aberto agora · fecha às " + hm(today[1]) };
+    if (today && min < today[0]) return { open: false, text: "Fechado agora · abre hoje às " + hm(today[0]) };
+    for (var i = 1; i <= 14; i++) {
+      var next = new Date(t.getTime() + i * 86400000), h = hoursOn(next);
+      if (h) return { open: false, text: (holiday ? "Feriado hoje" : "Fechado agora") + " · abre " + (i === 1 ? "amanhã" : DAYS[next.getUTCDay()]) + " às " + hm(h[0]) };
+    }
+    return { open: false, text: "Fechado agora" };
+  }
+  var el = document.getElementById("status");
+  function paint() { var st = status(); el.hidden = false; el.classList.toggle("open", st.open); document.getElementById("statusText").textContent = st.text; }
+  if (el) { paint(); setInterval(paint, 30000); }
+})();
+</script>
+</body>
+</html>
