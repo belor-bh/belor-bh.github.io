@@ -93,7 +93,13 @@ ul{list-style:none}
 .prova video{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line);background:#111}
 .prova figure+figure{margin-top:18px}
 .prova .vid{position:relative}
-.som{position:absolute;left:50%;transform:translateX(-50%);top:14px;border:0;border-radius:999px;padding:9px 16px;font:700 13px Montserrat,sans-serif;background:rgba(0,0,0,.72);color:#fff;cursor:pointer;backdrop-filter:blur(4px)}
+.som{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:78%;max-width:300px;border:2px solid var(--gold-hi);border-radius:22px;padding:18px 14px 16px;font-family:Montserrat,sans-serif;background:linear-gradient(160deg,rgba(11,11,11,.92),rgba(30,24,10,.92));color:#fff;cursor:pointer;text-align:center;box-shadow:0 0 0 0 rgba(201,162,74,.6),0 12px 34px rgba(0,0,0,.5);animation:somPulso 1.6s ease-out infinite}
+.som svg{display:block;margin:0 auto 8px;width:46px;height:46px;stroke:var(--gold-hi);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.som b{display:block;font-size:17px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;color:var(--gold-hi)}
+.som span{display:block;margin-top:4px;font-size:12px;font-weight:600;color:#fff}
+.som .tag{display:inline-block;margin-bottom:8px;padding:3px 10px;border-radius:999px;background:var(--gold);color:var(--ink);font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+@keyframes somPulso{0%{box-shadow:0 0 0 0 rgba(241,217,143,.65),0 12px 34px rgba(0,0,0,.5)}70%{box-shadow:0 0 0 18px rgba(241,217,143,0),0 12px 34px rgba(0,0,0,.5)}100%{box-shadow:0 0 0 0 rgba(241,217,143,0),0 12px 34px rgba(0,0,0,.5)}}
+@media (prefers-reduced-motion:reduce){.som{animation:none}}
 .som.off{display:none}
 .prova figcaption{margin-top:10px;text-align:center;font-size:12px;line-height:1.4;font-weight:600;color:var(--muted)}
 
@@ -196,7 +202,12 @@ ul{list-style:none}
       <p class="prova-t">Quem já foi na loja</p>
       <figure class="vid">
         <video id="vProva" src="depoimentos/cliente-jeans.mp4" poster="depoimentos/cliente-jeans.jpg" width="540" height="960" muted autoplay loop playsinline preload="metadata" aria-label="Story de um cliente mostrando a calça jeans que comprou na Belor"></video>
-        <button type="button" id="somBtn" class="som" aria-label="Ligar o som do vídeo">🔊 Toque para ouvir</button>
+        <button type="button" id="somBtn" class="som" aria-label="Ligar o som do vídeo">
+          <span class="tag">Vídeo sem som</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M16 9.5a4 4 0 0 1 0 5"/><path d="M19 7a8 8 0 0 1 0 10"/></svg>
+          <b>Toque para ouvir</b>
+          <span>Veja o que o cliente falou, com som desde o início</span>
+        </button>
         <figcaption>Story de cliente com a compra</figcaption>
       </figure>
       <figure>
@@ -309,7 +320,7 @@ ul{list-style:none}
 })();
 
 (function(){var v=document.getElementById("vProva"),b=document.getElementById("somBtn");if(!v||!b)return;
-b.addEventListener("click",function(){try{v.muted=false;v.currentTime=0;v.play();}catch(e){}b.classList.add("off");});
+b.addEventListener("click",function(){b.classList.add("off");v.muted=false;v.currentTime=0;var p=v.play();if(p&&p.catch){p.catch(function(){v.muted=true;v.play();b.classList.remove("off");});}});
 })();
 </script>
 </body>
