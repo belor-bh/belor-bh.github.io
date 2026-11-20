@@ -217,6 +217,23 @@ ul{list-style:none}
   var site = document.querySelector("a.site");
   if (site) site.href = "https://beloestilobh.com.br/?utm_source=" + ORIGEM.toLowerCase() + "&utm_medium=bio&utm_campaign=link_bio";
 
+  // Contagem no app Belor: visitas e cliques por dia, Instagram x TikTok (aba "Bio" da planilha)
+  var API = "https://script.google.com/macros/s/AKfycbwp29On9-npjl4QyiiJ_Q9g6tIKjmwTbdtq05uGk4D06_VR12A6xAeZpVHZRnH8UVGN/exec";
+  function conta(botao) {
+    try {
+      fetch(API, { method: "POST", mode: "no-cors", keepalive: true,
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({ acao: "bio", origem: ORIGEM.toLowerCase(), botao: botao }) });
+    } catch (e) {}
+  }
+  if (!/HeadlessChrome|bot|crawler|spider|facebookexternalhit/i.test(navigator.userAgent)) {
+    conta("visitas");
+    [["#waMain", "whats"], ["a.vip", "vip"], ["a.site", "site"], ["a.map", "loja"]].forEach(function (b) {
+      var el = document.querySelector(b[0]);
+      if (el) el.addEventListener("click", function () { conta(b[1]); });
+    });
+  }
+
   // Black Friday: 05/11 00:00 até 14/11 23:59 (horário de BH, UTC-3)
   var START = Date.UTC(2026, 10, 5, 3, 0, 0);
   var END = Date.UTC(2026, 10, 15, 3, 0, 0);
