@@ -92,6 +92,9 @@ ul{list-style:none}
 .prova img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line);background:#111}
 .prova video{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line);background:#111}
 .prova figure+figure{margin-top:18px}
+.prova .vid{position:relative}
+.som{position:absolute;left:50%;transform:translateX(-50%);top:14px;border:0;border-radius:999px;padding:9px 16px;font:700 13px Montserrat,sans-serif;background:rgba(0,0,0,.72);color:#fff;cursor:pointer;backdrop-filter:blur(4px)}
+.som.off{display:none}
 .prova figcaption{margin-top:10px;text-align:center;font-size:12px;line-height:1.4;font-weight:600;color:var(--muted)}
 
 /* Rodapé */
@@ -191,14 +194,15 @@ ul{list-style:none}
 
     <section class="prova">
       <p class="prova-t">Quem já foi na loja</p>
+      <figure class="vid">
+        <video id="vProva" src="depoimentos/cliente-jeans.mp4" poster="depoimentos/cliente-jeans.jpg" width="540" height="960" muted autoplay loop playsinline preload="metadata" aria-label="Story de um cliente mostrando a calça jeans que comprou na Belor"></video>
+        <button type="button" id="somBtn" class="som" aria-label="Ligar o som do vídeo">🔊 Toque para ouvir</button>
+        <figcaption>Story de cliente com a compra</figcaption>
+      </figure>
       <figure>
         <img src="depoimentos/samuel.webp" width="640" height="824" loading="lazy" alt="Mensagem de WhatsApp do cliente Samuel Eduardo agradecendo o atendimento na loja: material muito bom, nota 10/10">
         <figcaption>Mensagem de cliente no WhatsApp · número ocultado</figcaption>
       </figure>
-        <figure>
-          <video src="depoimentos/cliente-jeans.mp4" poster="depoimentos/cliente-jeans.jpg" width="540" height="960" muted autoplay loop playsinline preload="metadata" aria-label="Story de um cliente mostrando a calça jeans que comprou na Belor"></video>
-          <figcaption>Story de cliente com a compra · perfil ocultado</figcaption>
-        </figure>
     </section>
   </main>
 
@@ -302,6 +306,10 @@ ul{list-style:none}
   var el = document.getElementById("status");
   function paint() { var st = status(); el.hidden = false; el.classList.toggle("open", st.open); document.getElementById("statusText").textContent = st.text; }
   if (el) { paint(); setInterval(paint, 30000); }
+})();
+
+(function(){var v=document.getElementById("vProva"),b=document.getElementById("somBtn");if(!v||!b)return;
+b.addEventListener("click",function(){try{v.muted=false;v.currentTime=0;v.play();}catch(e){}b.classList.add("off");});
 })();
 </script>
 </body>
