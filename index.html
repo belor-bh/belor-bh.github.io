@@ -143,7 +143,7 @@ ul{list-style:none}
   </header>
 
   <main class="sheet">
-    <a class="btn wa" id="waMain" href="https://wa.me/5531998090981?text=Oi!%20Vim%20pela%20bio%20do%20Instagram%20e%20quero%20ver%20as%20pe%C3%A7as%20%F0%9F%91%91">
+    <a class="btn wa" id="waMain" href="https://wa.me/5531998090981?text=Oi!%20Vim%20pelo%20Instagram%20e%20quero%20ver%20as%20pe%C3%A7as%20%F0%9F%91%91">
       <span class="ic"><svg class="i"><use href="#i-chat"/></svg></span>
       <span class="txt"><span class="t">Quero falar no WhatsApp</span><span class="s">Tire dúvidas, veja as peças e compre de onde estiver</span></span>
       <svg class="i chev"><use href="#i-chev"/></svg>
@@ -194,12 +194,28 @@ ul{list-style:none}
 
 <script>
 (function () {
-  var WA = "5531998090981"; // WhatsApp Business da loja
+  // Dois WhatsApps: Dyeniffer (Business da loja) e Júlio. Cada visitante cai em um deles (metade pra cada)
+  // e volta sempre pro mesmo atendente.
+  var NUMS = ["5531998090981", "5531995687535"];
+  var WA = NUMS[0];
+  try {
+    var salvo = localStorage.getItem("belor_wa");
+    if (NUMS.indexOf(salvo) >= 0) WA = salvo;
+    else { WA = NUMS[Math.random() < 0.5 ? 0 : 1]; localStorage.setItem("belor_wa", WA); }
+  } catch (e) { WA = NUMS[Math.random() < 0.5 ? 0 : 1]; }
+
+  // De onde veio: belor-bh.github.io (Instagram) ou belor-bh.github.io/tiktok (TikTok)
+  var de = "";
+  try { de = (new URLSearchParams(location.search).get("de") || "").toLowerCase(); } catch (e) {}
+  var ORIGEM = de === "tiktok" ? "TikTok" : "Instagram";
+
   function wa(msg) { return "https://wa.me/" + WA + "?text=" + encodeURIComponent(msg); }
   function pad(n) { return (n < 10 ? "0" : "") + n; }
 
   var main = document.getElementById("waMain");
-  if (main) main.href = wa("Oi! Vim pela bio do Instagram e quero ver as peças 👑");
+  if (main) main.href = wa("Oi! Vim pelo " + ORIGEM + " e quero ver as peças 👑");
+  var site = document.querySelector("a.site");
+  if (site) site.href = "https://beloestilobh.com.br/?utm_source=" + ORIGEM.toLowerCase() + "&utm_medium=bio&utm_campaign=link_bio";
 
   // Black Friday: 05/11 00:00 até 14/11 23:59 (horário de BH, UTC-3)
   var START = Date.UTC(2026, 10, 5, 3, 0, 0);
